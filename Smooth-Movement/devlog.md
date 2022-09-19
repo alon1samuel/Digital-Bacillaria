@@ -53,3 +53,34 @@ I've just taken the standard code from [opencv optical flow](https://docs.opencv
 
 
 
+**2022-09-06**
+
+<u>Meetup with Thomas and Dick and Bradly</u>
+
+Stuff from my side - 
+
+1. Show repository 
+2. Activating the Segmentation notebook + results. 
+3. Show algorithms - corner Harris detection + Optical flow algorithm. 
+
+
+
+Project ideas from Dick Gordon - 
+
+1. Determine if smooth or jerky 
+2. Visualize cloud around a colony 
+3. Long range interactions 
+4. Light piping 
+5. Wall of light - of a colony. Was checked for single cell.
+6. Single cell - 
+7. Ability to get out of sediment (mud) - 
+8. Acceleration by light - 
+9. Papers - 
+   1. Sabuncu, A.C., Gordon, R., Richer, E., Manoylov, K.M. and Beskok, A. (2021) The kinematics of explosively jerky diatom motility: A natural example of active nanofluidics. In:  Diatom Gliding Motility [Volume in the series: Diatoms: Biology & Applications, series editors: Richard Gordon & Joseph Seckbach]. S.A. Cohn, K.M. Manoylov and R. Gordon, (eds.) Wiley-Scrivener, Beverly, MA, USA: 33-63. 
+   2. Tiffany, M.A. & M. Ghobara (eds.) (2023) Chain Diatoms [DCHN, Volume in the series: Diatoms: Biology & Applications, series editors: Richard Gordon & Joseph Seckbach, Proposal: In preparation]. Wiley-Scrivener, Beverly, MA, USA.. 
+
+Sharing of presentation by Thomas - 
+
+1. We are ignoring movement in the axis along the stacking of the diatoms. IE we are checking jerky movement along the movement of the diatom.
+2. The movement can be divided to a smooth part and a jerky part. On top of that we can add the external movement error (tracking error, camera error, etc...).
+3. 
