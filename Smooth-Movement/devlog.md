@@ -84,3 +84,26 @@ Sharing of presentation by Thomas -
 1. We are ignoring movement in the axis along the stacking of the diatoms. IE we are checking jerky movement along the movement of the diatom.
 2. The movement can be divided to a smooth part and a jerky part. On top of that we can add the external movement error (tracking error, camera error, etc...).
 3. 
+
+# 2022-09-19
+
+Tracking 1 diatom. To reproduce the results from Thomas.
+
+I want to track each diatom. 
+
+I'll create a format of subfolders with - trimmed_video, initial coordinates of diatom to track.
+
+| Exp                | Img                                                          |
+| ------------------ | ------------------------------------------------------------ |
+| Calibration phase. | ![image-20220919144043814](devlog.assets/image-20220919144043814.png) |
+|                    |                                                              |
+|                    |                                                              |
+
+Chat with Bradly on 19th of Sept
+
+| Exp                                                          | Img                                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Talking about the equations and about the noise and correlation between them | ![image-20220919152720625](devlog.assets/image-20220919152720625.png) |
+|                                                              | [Link](https://jamboard.google.com/d/1YlKtX_YqosTLvHO8j6gvSWQ3rVQxp1z1YlQujrOfo14/viewer?f=0) |
+|                                                              |                                                              |
+
