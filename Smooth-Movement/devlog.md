@@ -107,3 +107,16 @@ Chat with Bradly on 19th of Sept
 |                                                              | [Link](https://jamboard.google.com/d/1YlKtX_YqosTLvHO8j6gvSWQ3rVQxp1z1YlQujrOfo14/viewer?f=0) |
 |                                                              |                                                              |
 
+**2022-10-09**
+
+I want to track 1 diatom - steps:
+
+1. Get video, 
+2. Get times in video
+3. Trim and save to new video
+4. Decide start point - manually
+5. Activate tracker on 1 point. 
+6. Get tracking pixels
+7. Transform to micro meters
+8. Rotate to 1 axis
+9. Save to file
