@@ -1,11 +1,15 @@
 import numpy as np
 import cv2
 from pathlib import Path
+import json
 
 
-VIDEO_PATH = Path("Smooth-Movement/data/40x_100fps_b5_trimmed_1.avi")
-TRACKING_VID_PATH = Path("Smooth-Movement/data/40x_100fps_b5_trimmed_1_track.avi")
-TRACKING_IMG_PATH = Path("Smooth-Movement/data/40x_100fps_b5_trimmed_1_track.png")
+VIDEO_DIR_PATH = Path("Smooth-Movement/data/")
+VIDEO_NAME = "40x_100fps_b5_trimmed_1"
+VIDEO_PATH = VIDEO_DIR_PATH / (VIDEO_NAME + ".avi")
+TRACKING_VID_PATH = VIDEO_DIR_PATH / (VIDEO_NAME + "_track" + ".avi")
+TRACKING_IMG_PATH = VIDEO_DIR_PATH / (VIDEO_NAME + "_track" + ".png")
+TRACKING_POINT_PATH = VIDEO_DIR_PATH / (VIDEO_NAME + "_track" + ".json")
 
 # Parameters for lucas kanade optical flow
 lk_params = dict(
@@ -48,6 +52,7 @@ def track_1_diatom(
     vid_path,
     output_track_video_path: Path,
     output_track_img_path: Path,
+    output_track_points_path: Path,
 ):
     color = np.random.randint(0, 255, (100, 3))
     cap = cv2.VideoCapture(vid_path.as_posix())
@@ -63,10 +68,10 @@ def track_1_diatom(
     tracking_point_pix = [[661, 22]]
     tracking_point = np.array(tracking_point_pix, dtype=np.float32)
     tracking_point = np.reshape(tracking_point, newshape=(-1, 1, 2))
+    output_tracking_points = tracking_point.copy()
     while 1:
         ret, frame = cap.read()
         if not ret:
-            print("No frames grabbed!")
             break
         frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         # calculate optical flow
@@ -100,10 +105,15 @@ def track_1_diatom(
             break
         old_gray = frame_gray.copy()
         tracking_point = good_new.reshape(-1, 1, 2)
-    img
+        output_tracking_points = np.append(output_tracking_points, tracking_point, axis=0)
+    cv2.imwrite(output_track_img_path.as_posix(), img)
     cv2.destroyAllWindows()
+    with open(output_track_points_path, 'w')as f:
+        json.dump(output_tracking_points.tolist(), f, indent=4)
     pass
 
 
 if __name__ == "__main__":
-    track_1_diatom(VIDEO_PATH, TRACKING_VID_PATH, TRACKING_IMG_PATH)
+    track_1_diatom(
+        VIDEO_PATH, TRACKING_VID_PATH, TRACKING_IMG_PATH, TRACKING_POINT_PATH
+    )
