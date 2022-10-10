@@ -5,3 +5,4 @@ detectron2>=0.6
 moviepy>=1.0
 plotly>=5.10
 pandas>=1.5
+mypy>=0.98

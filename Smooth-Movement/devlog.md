@@ -116,7 +116,45 @@ I want to track 1 diatom - steps:
 3. ~~Trim and save to new video~~
 4. ~~Decide start point - manually~~
 5. ~~Activate tracker on 1 point.~~ 
-6. Get tracking pixels
-7. Transform to micro meters
-8. Rotate to 1 axis
-9. Save to file
+6. ~~Get tracking pixels~~
+7. ~~Save to file~~
+8. ~~Transform to micro meters~~
+   1. ~~Get micro meter scale transformation.~~
+9. ~~Rotate to 1 axis - transform to polar coordinates.~~
+10. Duplicate to 2 spots on 1 diatom
+
+
+
+**2022-10-10**
+
+
+
+Calibrate the camera to smooth motion - stoke's law. 
+
+Edge detection - and angle prediction. 
+
+Assumption - all diatoms are parallel - Get a distribution of what the angles are. 
+
+Line approach. NN training. Looking in the repo. If not then write doc for it and prepare it for people to use in the future. 
+
+
+
+| Exp                                                          | Img                                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Showing the distribution of the line of tracking             | ![image-20221010211652208](devlog.assets/image-20221010211652208.png) |
+| The tracking line                                            | ![image-20221010211725564](devlog.assets/image-20221010211725564.png) |
+| We can see that there is a distribution, but maybe it's small? I can also get the mean and std just to be sure. |                                                              |
+| STD                                                          | ![image-20221010211856627](devlog.assets/image-20221010211856627.png) |
+|                                                              | ![image-20221010212044950](devlog.assets/image-20221010212044950.png) |
+| This is the degrees because of y is increasing as we go down, so it's suppose to be -83 deg. |                                                              |
+|                                                              |                                                              |
+
+In degrees:
+
+| Exp                                                          | Img                                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+|                                                              | ![image-20221010213052651](devlog.assets/image-20221010213052651.png) |
+|                                                              | ![image-20221010213104104](devlog.assets/image-20221010213104104.png) |
+| Now it fits more, I can see that the std is really low relative to the angle that is being formed. |                                                              |
+|                                                              |                                                              |
+
