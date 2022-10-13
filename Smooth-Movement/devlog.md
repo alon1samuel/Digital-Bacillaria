@@ -158,3 +158,19 @@ In degrees:
 | Now it fits more, I can see that the std is really low relative to the angle that is being formed. |                                                              |
 |                                                              |                                                              |
 
+
+
+# 2022-10-13
+
+I'm duplicating the tracker to 2 points and more.
+
+| Exp                                                          | Img                                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| I've entered another point and the tracker is holding it fine. Without saving the points ATM | ![image-20221013173339898](devlog.assets/image-20221013173339898.png) |
+| Adding points breaks when the number of points changes. Cause how would I know which point got removed... | ![image-20221013180020160](devlog.assets/image-20221013180020160.png) |
+| But it works well for unbreaking tracking points.            | ![image-20221013180659672](devlog.assets/image-20221013180659672.png) |
+|                                                              |                                                              |
+
+
+
+# Devlog End
